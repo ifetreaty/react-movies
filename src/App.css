@@ -2,37 +2,363 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+  font-family: "Neris Thin";
+  src: url("./assets/fonts/Neris-Thin.ttf");
+  font-weight: 300;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@font-face {
+  font-family: "Neris";
+  src: url("./assets/fonts/Neris-Light.ttf");
+  font-weight: 400;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@font-face {
+  font-family: "Neris SemiBold";
+  src: url("./assets/fonts/Neris-SemiBold.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Neris Black";
+  src: url("./assets/fonts/Neris-Black.ttf");
+  font-weight: 900;
+}
+
+html * {
+  font-family: "Neris" !important;
+}
+
+.home {
   display: flex;
   flex-direction: column;
+}
+
+.movie-nav {
+  width: 100%;
+  display: flex;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: #ffffff;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
+}
+
+.movie-logo {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+}
+
+.movie-menu-items {
+  display: flex;
+  flex-direction: row;
+}
+
+.movie-menu-item {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-right: 1rem;
+  color: #4b5563;
+}
+
+.movie-search-icon {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-right: 1rem;
+  color: #4b5563;
+}
+
+.icon {
+  width: 1.3rem;
+  height: 1.3rem;
+  margin-top: 0.2rem;
+  position: absolute;
+  cursor: pointer;
+}
+
+#search {
+  padding-left: 1.8rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  margin-left: 48%;
+  margin-top: -0.5rem;
+  width: 12rem;
+}
+
+.movie-date-time {
+  display: flex;
+  flex-direction: row;
+}
+
+.movie-time {
+  font-size: 3rem;
+  line-height: 1;
+  font-weight: 700;
+  margin-right: 1.5rem;
+}
+
+.movie-date {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  margin-top: 0.7rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.movie-date-date,
+.movie-date-day {
+  color: #4b5563;
+  text-align: left;
+}
+
+.movie-trailer {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+  padding-left: 5%;
+  color: #ffffff;
+  width: 100%;
+  display: flex;
+  background: rgba(0, 185, 255, 255);
+}
+
+.movie-trailer-text {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.movie-trailer-header {
+  font-size: 3.75rem;
+  line-height: 1;
+  font-weight: 900;
+}
+
+.movie-trailer-button {
+  display: flex;
+  padding-top: 0.85rem;
+  padding-bottom: 0.85rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-top: 1.5rem;
+  background-color: #ffffff;
+  color: #000000;
+  align-items: center;
+  width: max-content;
+  border-radius: 9999px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  border: none;
+  font-weight: 700;
+}
+
+.movie-trailer-button:hover {
+  background-color: paleturquoise;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.2);
+  color: gray;
+  transform: translateY(-7px);
+}
+
+.movie-trailer-image {
+  position: relative;
+  margin-left: 20%;
+}
+
+.trailer-image-sizing {
+  object-fit: contain;
+  position: absolute;
+}
+
+.recommended-movies-container {
+  width: 100%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.recommended-movies-container-nav {
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  margin-left: 5.5rem;
+}
+
+.recommended-movies-container-nav-header {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+
+.recommended-movies-images {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+  margin-left: 5.5rem;
+  margin-right: 5.5rem;
+}
+
+.browse-movies-container {
+  width: 100%;
+  padding-top: 2rem;
+  display: flex;
+  margin-left: 5.5rem;
+}
+
+.browse-movies-nav {
+  position: relative;
+  display: flex;
+  width: 100%;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+
+.browse-movies-nav-header {
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  margin-left: 5.5rem;
+}
+
+.browse-movies-menu-items {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin-left: 4rem;
+  margin-top: -2.3rem;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.browse-movies-menu-items li {
+  list-style-type: none;
+  margin-right: 2.5rem;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.browse-movies-images {
+  width: 25rem;
+  height: 16rem;
+  margin-right: 2.5rem;
+}
+
+.browse-movies-text {
+  height: 100%;
+}
+
+.browse-movies-title {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  text-align: left;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.browse-movies-overview {
+  width: 45%;
+  text-align: left;
+  font-size: 0.95rem;
+  margin-bottom: 1.3rem;
+}
+
+.browse-movies-add-list {
+  display: flex;
+}
+
+.browse-movies-tag {
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.row {
+  margin-top: 2em;
+  margin-left: 20px;
+  color: #fff;
+}
+
+.posters {
+  display: flex;
+  padding: 20px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.posters::-webkit-scrollbar {
+  display: none;
+}
+
+.poster {
+  max-height: 250px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.small-poster {
+  max-height: 100px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.poster:hover {
+  transform: scale(1.1);
+}
+.small-poster:hover {
+  transform: scale(1.1);
+}
+
+.show-container {
+  height: 100%;
+
+  width: 100%;
+}
+
+.close-icon {
+  position: relative;
+  left: 3%;
+  margin-bottom: 1em;
+}
+
+.close-icon img {
+  width: 25px;
+  height: 25px;
+}
+.hide-icon {
+  display: none;
+}
+
+.App {
+  text-align: center;
+}
+.popular-movies {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 1rem;
+  grid-row-gap: 2rem;
+}
+
+.recommended-images {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 1rem;
 }
